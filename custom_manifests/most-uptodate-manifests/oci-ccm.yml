@@ -213,7 +213,6 @@ stringData:
       rateLimitQPSWrite: 20.0
       rateLimitBucketWrite: 5
 
-
 ---
 
 # oci-ccm-05-daemon-set.yaml
@@ -266,7 +265,7 @@ spec:
           path: /etc/kubernetes
       containers:
       - name: oci-cloud-controller-manager
-        image: ghcr.io/davidfoster0127/cloud-provider-oci:v1.28.0
+        image: ghcr.io/davidfoster0127/cloud-provider-oci:rhtest-rbv-v2
         command:
         - /bin/bash
         - -c
