@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rajat-test-2
+spec:
+  containers:
+  - name: rajat-test-2
+    image: centos
+    command: ["/bin/sh"]
+    args: ["-c", "while true; do echo Rajat >> /dev/block; sleep 5; done"]
+    volumeDevices:
+    - name: ps-test-2
+      devicePath: /dev/block
+  volumes:
+  - name: ps-test-2
+    persistentVolumeClaim:
+      claimName: oci-bv-claim-2
